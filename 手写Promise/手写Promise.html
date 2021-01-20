@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./JunPromise_2_实现then的链式调用.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let promise = new JunPromise(function(resolve, reject){
+            resolve('111')
+        })
+        promise.then(function(result){
+            console.log(result)
+            return 222
+        }).then(function(result){
+            console.log(result)
+        })
+    </script>
+</body>
+</html>
