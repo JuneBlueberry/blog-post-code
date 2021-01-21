@@ -5,7 +5,12 @@
  * @Last Modified time: 2021-01-20 18:52:48
  */
 
- //实现基础架构
+ /**
+  * 实现基础架构
+  * 1.三种状态
+  * 2.resolve,reject,then方法
+  */
+
 
  class JunPromise {
     //构造函数
