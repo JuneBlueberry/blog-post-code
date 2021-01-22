@@ -3,25 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./JunPromise_2_实现then函数.js"></script>
+    <script src="./JunPromise_3_实现resolve函数.js"></script>
     <title>Document</title>
 </head>
 <body>
     <script>
-        let promise = new JunPromise(function(resolve, reject){
-            resolve(111)
-        })
+        /**
+         * 基础机构和then函数
+        */
+        // let p = new JunPromise(function(resolve, reject){
+        //     resolve(111)
+        // })
         
-        let p1 = promise.then().then(function(result){
+        // let p1_1 = promise.then().then(function(result){
+        //     console.log(result)
+        //     return 222
+        // })
+        // let p1_2 = p1_1.then(function(result){
+        //     console.log(result)
+        //     return 333
+        // })
+        // let p1_3 = p1_2.then(function(result){
+        //     console.log(result)
+        // })
+
+        /**
+         * resolve
+        */      
+        let p2_1 = JunPromise.resolve(new JunPromise(function(resolve, reject){
+            resolve(111)
+        }))
+        p2_1.then(function(result){
             console.log(result)
-            return 222
         })
-        let p2 = p1.then(function(result){
+
+        let thenable = {
+            then: function(resolve, reject) {
+                reject(222)
+            }
+        }
+        let p2_2 = JunPromise.resolve(thenable)
+        p2_2.then(undefined, function(result){
             console.log(result)
-            return 333
         })
-        let p3 = p2.then(function(result){
+
+        let p2_3 = JunPromise.resolve(333)
+        p2_3.then(function(result){
             console.log(result)
+        })
+
+        let p2_4 = JunPromise.resolve()
+        p2_4.then(function(){
+            console.log(444)
         })
     </script>
 </body>
