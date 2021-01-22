@@ -39,11 +39,11 @@
 
         let thenable = {
             then: function(resolve, reject) {
-                reject(222)
+                resolve(222)
             }
         }
         let p2_2 = JunPromise.resolve(thenable)
-        p2_2.then(undefined, function(result){
+        p2_2.then(function(result){
             console.log(result)
         })
 

@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-22 11:10:08 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-22 18:11:22
+ * @Last Modified time: 2021-01-22 18:21:27
  */
 
  /**
@@ -128,7 +128,7 @@
         //         return callback
         //     } 
         //     else if (typeof callback == 'object' && callback.then){
-        //         return new JunPromise((resolve, reject) => callback.then(resolve, reject))
+        //         return new JunPromise(resolve => callback.then(resolve))
         //     } 
         //     //参数为常数
         //     else {
@@ -145,7 +145,7 @@
             return callback
         } 
         else if (typeof callback == 'object' && callback.then){
-            return new JunPromise((resolve, reject) => callback.then(resolve, reject))
+            return new JunPromise(resolve => callback.then(resolve))
         } 
         else {
             return new JunPromise(resolve => resolve(callback))
