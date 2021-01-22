@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-22 11:10:08 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-22 18:02:06
+ * @Last Modified time: 2021-01-22 18:11:22
  */
 
  /**
@@ -122,26 +122,34 @@
 
     //resolve方法
     static resolve = (callback) => {
-        if(callback){
-            //参数本身就是Promise对象
-            if(callback instanceof JunPromise){
-                return callback
-            } 
-            else if (typeof callback == 'object' && callback.then){
-                return new JunPromise((resolve, reject) => callback.then(resolve, reject))
-            } 
-            //参数为常数
-            else {
-                return new JunPromise(resolve => resolve(callback))
-            }
-        } 
-        else {
-            //参数为常数 && 不带参数
-            return new JunPromise(resolve => resolve(callback))
-        }
+        // if(callback){
+        //     //参数本身就是Promise对象
+        //     if(callback instanceof JunPromise){
+        //         return callback
+        //     } 
+        //     else if (typeof callback == 'object' && callback.then){
+        //         return new JunPromise((resolve, reject) => callback.then(resolve, reject))
+        //     } 
+        //     //参数为常数
+        //     else {
+        //         return new JunPromise(resolve => resolve(callback))
+        //     }
+        // } 
+        // else {
+        //     //不带参数
+        //     return new JunPromise(resolve => resolve(callback))
+        // }
 
         //简化
-        // if(){
+        if(callback instanceof JunPromise){
+            return callback
+        } 
+        else if (typeof callback == 'object' && callback.then){
+            return new JunPromise((resolve, reject) => callback.then(resolve, reject))
+        } 
+        else {
+            return new JunPromise(resolve => resolve(callback))
+        }
     }
  }
 
