@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./JunPromise_3_实现resolve函数.js"></script>
+    <script src="./JunPromise_1_实现基础架构.js"></script>
+    <!-- <script src="./JunPromise_3_实现resolve函数.js"></script> -->
     <title>Document</title>
 </head>
 <body>
@@ -11,9 +12,12 @@
         /**
          * 基础机构和then函数
         */
-        // let p = new JunPromise(function(resolve, reject){
-        //     resolve(111)
-        // })
+        let p0_1 = new JunPromise(function(resolve, reject){
+            resolve('我是一个基础架构')
+        })
+        p0_1.then(function(value){
+            console.log('p0_1:', value)
+        })
         
         // let p1_1 = promise.then().then(function(result){
         //     console.log(result)
@@ -30,32 +34,32 @@
         /**
          * resolve
         */      
-        let p2_1 = JunPromise.resolve(new JunPromise(function(resolve, reject){
-            resolve(111)
-        }))
-        p2_1.then(function(result){
-            console.log(result)
-        })
+        // let p2_1 = JunPromise.resolve(new JunPromise(function(resolve, reject){
+        //     resolve(111)
+        // }))
+        // p2_1.then(function(result){
+        //     console.log(result)
+        // })
 
-        let thenable = {
-            then: function(resolve, reject) {
-                resolve(222)
-            }
-        }
-        let p2_2 = JunPromise.resolve(thenable)
-        p2_2.then(function(result){
-            console.log(result)
-        })
+        // let thenable = {
+        //     then: function(resolve, reject) {
+        //         resolve(222)
+        //     }
+        // }
+        // let p2_2 = JunPromise.resolve(thenable)
+        // p2_2.then(function(result){
+        //     console.log(result)
+        // })
 
-        let p2_3 = JunPromise.resolve(333)
-        p2_3.then(function(result){
-            console.log(result)
-        })
+        // let p2_3 = JunPromise.resolve(333)
+        // p2_3.then(function(result){
+        //     console.log(result)
+        // })
 
-        let p2_4 = JunPromise.resolve()
-        p2_4.then(function(){
-            console.log(444)
-        })
+        // let p2_4 = JunPromise.resolve()
+        // p2_4.then(function(){
+        //     console.log(444)
+        // })
     </script>
 </body>
 </html>

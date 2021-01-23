@@ -1,8 +1,8 @@
 /*
  * @Author: buleberry 
  * @Date: 2021-01-20 15:30:58 
- * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-20 18:52:48
+ * @Last Modified by: blueberry
+ * @Last Modified time: 2021-01-23 17:36:17
  */
 
  /**
@@ -24,22 +24,15 @@
     successMessage = undefined
     //回调失败的值
     failMessage = undefined
-    //成功回调函数
-    resolveCallback = undefined
-    //失败回调函数
-    rejectCallback = undefined
 
     //状态pending => fulfilled
     resolve = (value) => {
+        //状态已经一旦改变便不可逆
         if(this.status != 'pending'){
             return
         }
         this.status = 'fulfilled'
         this.successMessage = value
-        console.log('resolve-runing')
-
-        //成功回调已存在 则回调并返回成功值
-        this.resolveCallback && this.resolveCallback(value)
     }
 
     //状态pending => rejected
@@ -49,10 +42,6 @@
         }
         this.status = 'rejected'
         this.failMessage = value
-        console.log('reject-runing')
-
-        //失败回调已存在 则回调并返回失败值
-        this.rejectCallback && this.rejectCallback(value)
     }
 
     //then方法
@@ -61,10 +50,6 @@
             resolveCallback(this.successMessage)
         } else if(this.status == 'rejected') {
             rejectCallback(this.failMessage)
-        } else {
-            //等待状态，记录回调函数，等待时间回调
-            this.resolveCallback = resolveCallback
-            this.rejectCallback = rejectCallback
         }
     }
  }
