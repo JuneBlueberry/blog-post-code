@@ -2,16 +2,17 @@
  * @Author: buleberry 
  * @Date: 2021-01-20 19:14:15 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-22 18:01:47
+ * @Last Modified time: 2021-01-26 11:04:35
  */
 
  /**
   * 实现then函数
-  * 1.多个then调用
-  * 2.then的链式调用(then返回的是一个Promise对象)
-  * 3.then返回的Promise不可以是自身
-  * 4.then的参数可选
-  * 5.加入try,catch,出错则调用reject回调函数
+  * 1.then的异步调用
+  * 2.多个then调用
+  * 3.then的链式调用(then返回的是一个Promise对象)
+  * 4.then返回的Promise不可以是自身
+  * 5.then的参数可选
+  * 6.加入try,catch,出错则调用reject回调函数
   */
 
  class JunPromise {
