@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-27 11:09:03 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-27 13:11:21
+ * @Last Modified time: 2021-01-27 13:52:46
  */
 
  /**
@@ -120,6 +120,11 @@
         return this.then(undefined, rejectCallback)
     }
 
+    //finally
+    finally = () => {
+        
+    }
+
     //resolve方法
     static resolve = (callback) => {
         // if(callback){
@@ -150,6 +155,11 @@
         else {
             return new JunPromise(resolve => resolve(callback))
         }
+    }
+
+    //reject方法
+    static reject = (callback) => {
+        return new JunPromise((resolve, reject) => reject(callback))
     }
  }
 
