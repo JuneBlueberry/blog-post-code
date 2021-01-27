@@ -1,18 +1,14 @@
 /*
  * @Author: buleberry 
- * @Date: 2021-01-20 19:14:15 
+ * @Date: 2021-01-27 11:09:03 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-26 18:23:30
+ * @Last Modified time: 2021-01-27 13:11:21
  */
 
  /**
-  * 实现then函数
-  * 1.then的异步调用
-  * 2.多个then调用
-  * 3.then的链式调用(then返回的是一个Promise对象)
-  * 4.then返回的Promise不可以是自身
-  * 5.then的参数可选
-  * 6.加入try,catch,出错则调用reject回调函数
+  * 实现catch()和finally()
+  * 1.状态就会变为rejected，就会调用catch()方法指定的回调函数，处理这个错误。
+  * 2.then()方法指定的回调函数，如果运行中抛出错误，也会被catch()方法捕获。
   */
 
  class JunPromise {
@@ -108,7 +104,7 @@
                         judgmentPromise(_promise, resultPromise, resolve, reject)
                     })
                     this.rejectCallback.push(() => {
-                        let resultPromise = rejectCallback(this.successMessage)
+                        let resultPromise = rejectCallback(this.failMessage)
                         judgmentPromise(_promise, resultPromise, resolve, reject)
                     })
                 } catch (error) {
@@ -117,6 +113,43 @@
             }
         })
         return _promise
+    }
+
+    //catch函数
+    catch = (rejectCallback) => {
+        return this.then(undefined, rejectCallback)
+    }
+
+    //resolve方法
+    static resolve = (callback) => {
+        // if(callback){
+        //     //参数本身就是Promise对象
+        //     if(callback instanceof JunPromise){
+        //         return callback
+        //     } 
+        //     else if (typeof callback == 'object' && callback.then){
+        //         return new JunPromise(resolve => callback.then(resolve))
+        //     } 
+        //     //参数为常数
+        //     else {
+        //         return new JunPromise(resolve => resolve(callback))
+        //     }
+        // } 
+        // else {
+        //     //不带参数
+        //     return new JunPromise(resolve => resolve(callback))
+        // }
+
+        //简化
+        if(callback instanceof JunPromise){
+            return callback
+        } 
+        else if (typeof callback == 'object' && callback.then){
+            return new JunPromise(resolve => callback.then(resolve))
+        } 
+        else {
+            return new JunPromise(resolve => resolve(callback))
+        }
     }
  }
 

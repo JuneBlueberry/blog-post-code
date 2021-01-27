@@ -2,16 +2,19 @@
  * @Author: buleberry 
  * @Date: 2021-01-22 11:10:08 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-22 18:21:27
+ * @Last Modified time: 2021-01-27 13:43:50
  */
 
  /**
-  * 实现Promise.resolve函数
+  * 实现Promise.resolve()和Promise.reject()
   * Promise.resolve可将现有对象转化为一个Promise对象
   * 1.参数是 Promise 实例，将不做任何修改、原封不动地返回这个实例。
   * 2.参数是一个thenable对象，将返回一个Promise对象，并立即执行then函数
   * 3.参数是一个原始值，或者是一个不具有then()方法的对象，将返回一个新的 Promise 对象，状态为fulfilled
   * 4.没有参数，将直接返回一个fulfilled状态的 Promise 对象
+  * 
+  * Promise.reject可将现有对象转化为一个Promise对象
+  * 
   */
 
  class JunPromise {
@@ -85,7 +88,6 @@
                 catch (error) {
                     reject(error)
                 }
-
             } else if(this.status == 'rejected') {
                 try {
                     setTimeout(() => {
@@ -96,10 +98,9 @@
                 catch (error) {
                     reject(error)
                 }
-
             } else {
                 try {
-                    //等待状态，记录回调函数，等待时间回调
+                    // 等待状态，记录回调函数，等待时间回调
                     // this.resolveCallback.push(resolveCallback)
                     // this.rejectCallback.push(rejectCallback)
 
@@ -150,6 +151,11 @@
         else {
             return new JunPromise(resolve => resolve(callback))
         }
+    }
+
+    //reject方法
+    static reject = (callback) => {
+        return new JunPromise((resolve, reject) => reject(callback))
     }
  }
 

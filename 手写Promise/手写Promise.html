@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./JunPromise_1_实现基础架构.js"></script>
-    <!-- <script src="./JunPromise_3_实现resolve函数.js"></script> -->
+    <!-- <script src="./JunPromise_1_实现基础架构.js"></script> -->
+    <!-- <script src="./JunPromise_2_实现Promise.prototype.then().js"></script> -->
+    <script src="./JunPromise_3_实现Promise.resolve()和Promise.reject().js"></script>
+    <!-- <script src="./JunPromise_4_实现Promise.prototype.catch().js"></script> -->
     <title>Document</title>
 </head>
 <body>
@@ -12,12 +14,12 @@
         /**
          * 基础机构和then函数
         */
-        let p0_1 = new JunPromise(function(resolve, reject){
-            resolve('我是一个基础架构')
-        })
-        p0_1.then(function(value){
-            console.log('p0_1:', value)
-        })
+        // let p0_1 = new JunPromise(function(resolve, reject){
+        //     resolve('我是一个基础架构')
+        // })
+        // p0_1.then(function(value){
+        //     console.log('p0_1:', value)
+        // })
         
         // let p1_1 = promise.then().then(function(result){
         //     console.log(result)
@@ -59,6 +61,22 @@
         // let p2_4 = JunPromise.resolve()
         // p2_4.then(function(){
         //     console.log(444)
+        // })
+
+        let p3_1 = JunPromise.reject(111)
+        console.log(p3_1)
+
+        // let p5_1 = new JunPromise(function(resolve, reject){
+        //     setTimeout(() => {
+        //         reject(111)
+        //     }, 1000);
+        // })
+        // console.log('p5_1 :>> ', p5_1);
+        // p5_1.then(undefined, function(error0){
+        //     console.log('error0 :>> ', error0);
+        // })
+        // p5_1.catch(function(error1){
+        //     console.log('error1 :>> ', error1);
         // })
     </script>
 </body>
