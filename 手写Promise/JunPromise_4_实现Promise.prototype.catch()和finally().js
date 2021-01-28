@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-27 11:09:03 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-27 18:27:25
+ * @Last Modified time: 2021-01-28 10:29:47
  */
 
  /**
@@ -125,8 +125,10 @@
 
     //finally
     finally = (callback) => {
-        //callback()
-        return this.then(value => callback())
+        return this.then(
+            value => JunPromise.resolve(callback()).then(() => value),
+            reason => JunPromise.resolve(callback()).then(() => reason)
+        )
     }
 
     //resolve方法

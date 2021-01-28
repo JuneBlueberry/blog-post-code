@@ -89,21 +89,11 @@
         // })
 
         let p5_2 = new JunPromise(function(resolve, reject){
-            resolve(111)
+            reject(111)
         })
-        p5_2.then(undefined,function(error){
-            console.log(error)
-        }).finally(function(){
+        let p5_3 = p5_2.finally(function(){
             console.log(333)
             return 444
-        }).finally(function(){
-            console.log(444)
-            return 555
-        }).then(function(result){
-            console.log(result)
-            return 666
-        }).then(function(result){
-            console.log(result)
         })
     </script>
 </body>
