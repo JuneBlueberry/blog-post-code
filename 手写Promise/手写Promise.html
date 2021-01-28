@@ -6,7 +6,8 @@
     <!-- <script src="./JunPromise_1_实现基础架构.js"></script> -->
     <!-- <script src="./JunPromise_2_实现Promise.prototype.then().js"></script> -->
     <!-- <script src="./JunPromise_3_实现Promise.resolve()和Promise.reject().js"></script> -->
-    <script src="./JunPromise_4_实现Promise.prototype.catch()和finally().js"></script>
+    <!-- <script src="./JunPromise_4_实现Promise.prototype.catch()和finally().js"></script> -->
+    <script src="./JunPromise_7_实现Promise.allSettled().js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -88,13 +89,43 @@
         //     console.log('error1 :>> ', error1);
         // })
 
-        let p5_2 = new JunPromise(function(resolve, reject){
-            reject(111)
-        })
-        let p5_3 = p5_2.finally(function(){
-            console.log(333)
-            return 444
-        })
+        // let p5_2 = new JunPromise(function(resolve, reject){
+        //     reject(111)
+        // })
+        // let p5_3 = p5_2.finally(function(){
+        //     console.log(333)
+        //     return 444
+        // })
+
+        // const promises = [
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             resolve(111)
+        //         }, 2000);
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             reject(333)
+        //         }, 1000);
+        //     }),
+        // ];
+
+        // let p6_1 = JunPromise.allSettled(promises)
+        // p6_1.then(function(result){
+        //     console.log(result)
+        // })
+
+        const resolved = JunPromise.resolve(42);
+        const rejected = JunPromise.reject(-1);
+
+        const p6_2 = JunPromise.allSettled([resolved, rejected]);
+
+        p6_2.then(function (results) {
+            console.log(results);
+        });
     </script>
 </body>
 </html>

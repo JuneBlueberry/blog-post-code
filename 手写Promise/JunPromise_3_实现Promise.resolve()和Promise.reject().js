@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-22 11:10:08 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-27 17:52:28
+ * @Last Modified time: 2021-01-28 16:39:58
  */
 
  /**
@@ -26,9 +26,9 @@
     //状态 (pending-等待，fulfilled-完成，rejected-失败)
     status = 'pending'
     //回调成功的值
-    successMessage = undefined
+    value = undefined
     //回调失败的值
-    failMessage = undefined
+    reason = undefined
     //成功回调函数
     resolveCallback = []
     //失败回调函数
@@ -40,7 +40,7 @@
             return
         }
         this.status = 'fulfilled'
-        this.successMessage = value
+        this.value = value
 
         //成功回调已存在 则回调并返回成功值
         //this.resolveCallback && this.resolveCallback(value)
@@ -53,34 +53,34 @@
     }
 
     //状态pending => rejected
-    reject = (value) => {
+    reject = (reason) => {
         if(this.status != 'pending'){
             return
         }
         this.status = 'rejected'
-        this.failMessage = value
+        this.reason = reason
 
         //失败回调已存在 则回调并返回失败值
-        //this.rejectCallback && this.rejectCallback(value)
+        //this.rejectCallback && this.rejectCallback(reason)
 
         //循环调用失败回调函数
         while(this.rejectCallback.length > 0){
             let callback = this.rejectCallback.shift()
-            callback && callback(value)
+            callback && callback(reason)
         }
     }
 
     //then方法
     then = (resolveCallback, rejectCallback) => {
         //判断then方法是否有回调
-        resolveCallback = resolveCallback ? resolveCallback : successMessage => successMessage
-        rejectCallback = rejectCallback ? rejectCallback : failMessage => failMessage
+        resolveCallback = resolveCallback ? resolveCallback : value => value
+        rejectCallback = rejectCallback ? rejectCallback : reason => reason
 
         let _promise = new JunPromise((resolve, reject) => {
             if(this.status == 'fulfilled') {
                 try {
                     setTimeout(() => {
-                        let resultPromise = resolveCallback(this.successMessage)
+                        let resultPromise = resolveCallback(this.value)
                         // return result
                         judgmentPromise(_promise, resultPromise, resolve, reject)
                     }, 0);
@@ -91,7 +91,7 @@
             } else if(this.status == 'rejected') {
                 try {
                     setTimeout(() => {
-                        let resultPromise = rejectCallback(this.failMessage)
+                        let resultPromise = rejectCallback(this.reason)
                         judgmentPromise(_promise, resultPromise, resolve, reject)
                     }, 0);
                 } 
@@ -106,11 +106,11 @@
 
                     //then链式调用的时候，就需要把结果也返回给下一个then方法
                     this.resolveCallback.push(() => {
-                        let resultPromise = resolveCallback(this.successMessage)
+                        let resultPromise = resolveCallback(this.value)
                         judgmentPromise(_promise, resultPromise, resolve, reject)
                     })
                     this.rejectCallback.push(() => {
-                        let resultPromise = rejectCallback(this.successMessage)
+                        let resultPromise = rejectCallback(this.value)
                         judgmentPromise(_promise, resultPromise, resolve, reject)
                     })
                 } catch (error) {
