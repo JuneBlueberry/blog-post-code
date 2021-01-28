@@ -2,18 +2,21 @@
  * @Author: buleberry 
  * @Date: 2021-01-28 11:53:28 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-28 17:04:51
+ * @Last Modified time: 2021-01-28 17:10:34
  */
 
 /**
   * 实现Promise.allSettled
-  * 1.接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。只有等到所有这些参数实例都返回结果，
-  * 不管是fulfilled还是rejected，包装实例才会结束。该方法由 ES2020 引入。
+  * 1.由 ES2020 引入,接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。只有等到所有这些参数实例都返回结果，
+  *   不管是fulfilled还是rejected，包装实例才会结束。
   * 2.该方法返回的新的 Promise 实例，一旦结束，状态总是fulfilled，不会变成rejected。
   * 3.状态变成fulfilled后，Promise 的监听函数接收到的参数是一个数组，
-  * 每个成员对应一个传入Promise.allSettled()的 Promise 实例。
+  *   每个成员对应一个传入Promise.allSettled()的 Promise 实例。
   * 
   * 实现Promise.any
+  * 1.由 ES2021 引入,接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例返回。
+  * 2.只要参数实例有一个变成fulfilled状态，包装实例就会变成fulfilled状态；
+  *   如果所有参数实例都变成rejected状态，包装实例就会变成rejected状态。
   */
 
 class JunPromise {
