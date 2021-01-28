@@ -151,6 +151,40 @@
         //     console.log(results);
         // });
 
+        const promises1 = [
+            new JunPromise(function(resolve, reject){
+                resolve(111)
+            }),
+            new JunPromise(function(resolve, reject){
+                resolve(222)
+            }),
+            new JunPromise(function(resolve, reject){
+                reject(333)
+            }),
+        ];
+
+        const p7_1 = JunPromise.any(promises1);
+        p7_1.then(function(result){
+            console.log(result)
+        })
+
+        const promises2 = [
+            new JunPromise(function(resolve, reject){
+                reject(111)
+            }),
+            new JunPromise(function(resolve, reject){
+                reject(222)
+            }),
+            new JunPromise(function(resolve, reject){
+                reject(333)
+            }),
+        ];
+
+        const p7_2 = JunPromise.any(promises2);
+        p7_2.catch(function(result){
+            console.log(result)
+        })
+
     </script>
 </body>
 </html>

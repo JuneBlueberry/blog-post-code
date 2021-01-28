@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-28 11:53:28 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-28 17:10:34
+ * @Last Modified time: 2021-01-28 18:14:20
  */
 
 /**
@@ -178,10 +178,38 @@ class JunPromise {
         let result = [], indexLength = pList.length
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(function(){
+                p.finally(() => {
                     result.push(p)
                     if(result.length === indexLength){
                         resolve(result)
+                    }
+                })
+            });
+        })
+    }
+
+    //any方法
+    static any = (pList) => {
+        let isSuccess = false, indexLength = pList.length, index = 0
+        let successValue = undefined, failReasonList = []
+        return new JunPromise((resolve, reject) => {
+            pList.forEach(p => {
+                p.finally(() => {
+                    if(!isSuccess){
+                        if(p.status == 'fulfilled'){
+                            isSuccess = true
+                            successValue = p.value
+                        } else if (p.status == 'rejected'){
+                            failReasonList.push(p.reason)
+                        }
+    
+                        index++
+                        if(isSuccess){
+                            resolve(successValue)
+                        }
+                        if(index === indexLength){
+                            throw failReasonList
+                        }
                     }
                 })
             });
