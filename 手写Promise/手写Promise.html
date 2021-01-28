@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="./JunPromise_1_实现基础架构.js"></script> -->
     <!-- <script src="./JunPromise_2_实现Promise.prototype.then().js"></script> -->
-    <script src="./JunPromise_3_实现Promise.resolve()和Promise.reject().js"></script>
-    <!-- <script src="./JunPromise_4_实现Promise.prototype.catch().js"></script> -->
+    <!-- <script src="./JunPromise_3_实现Promise.resolve()和Promise.reject().js"></script> -->
+    <script src="./JunPromise_4_实现Promise.prototype.catch()和finally().js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -63,8 +63,17 @@
         //     console.log(444)
         // })
 
-        let p3_1 = JunPromise.reject(111)
-        console.log(p3_1)
+        // let p3_1 = JunPromise.reject('出错了')
+        // console.log(p3_1)
+
+        // p3_1.then(null, function (s) {
+        //     console.log(s)
+        // });
+
+        // let p3_2 = JunPromise.reject('出错了2')
+        // p3_2.catch(function(error){
+        //     console.log(error)
+        // })
 
         // let p5_1 = new JunPromise(function(resolve, reject){
         //     setTimeout(() => {
@@ -78,6 +87,24 @@
         // p5_1.catch(function(error1){
         //     console.log('error1 :>> ', error1);
         // })
+
+        let p5_2 = new JunPromise(function(resolve, reject){
+            resolve(111)
+        })
+        p5_2.then(undefined,function(error){
+            console.log(error)
+        }).finally(function(){
+            console.log(333)
+            return 444
+        }).finally(function(){
+            console.log(444)
+            return 555
+        }).then(function(result){
+            console.log(result)
+            return 666
+        }).then(function(result){
+            console.log(result)
+        })
     </script>
 </body>
 </html>

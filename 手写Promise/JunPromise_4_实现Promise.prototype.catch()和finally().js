@@ -2,13 +2,16 @@
  * @Author: buleberry 
  * @Date: 2021-01-27 11:09:03 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-27 13:52:46
+ * @Last Modified time: 2021-01-27 18:27:25
  */
 
  /**
-  * 实现catch()和finally()
+  * 实现catch()
   * 1.状态就会变为rejected，就会调用catch()方法指定的回调函数，处理这个错误。
   * 2.then()方法指定的回调函数，如果运行中抛出错误，也会被catch()方法捕获。
+  * 
+  * 实现finally()
+  * 不管promise最后的状态，在执行完then或catch指定的回调函数以后，都会执行finally方法指定的回调函数
   */
 
  class JunPromise {
@@ -121,8 +124,9 @@
     }
 
     //finally
-    finally = () => {
-        
+    finally = (callback) => {
+        //callback()
+        return this.then(value => callback())
     }
 
     //resolve方法
