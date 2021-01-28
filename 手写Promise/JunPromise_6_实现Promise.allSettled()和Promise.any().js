@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-28 11:53:28 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-01-28 16:39:06
+ * @Last Modified time: 2021-01-28 17:04:51
  */
 
 /**
@@ -12,6 +12,8 @@
   * 2.该方法返回的新的 Promise 实例，一旦结束，状态总是fulfilled，不会变成rejected。
   * 3.状态变成fulfilled后，Promise 的监听函数接收到的参数是一个数组，
   * 每个成员对应一个传入Promise.allSettled()的 Promise 实例。
+  * 
+  * 实现Promise.any
   */
 
 class JunPromise {

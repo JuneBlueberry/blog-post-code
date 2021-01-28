@@ -7,7 +7,7 @@
     <!-- <script src="./JunPromise_2_实现Promise.prototype.then().js"></script> -->
     <!-- <script src="./JunPromise_3_实现Promise.resolve()和Promise.reject().js"></script> -->
     <!-- <script src="./JunPromise_4_实现Promise.prototype.catch()和finally().js"></script> -->
-    <script src="./JunPromise_7_实现Promise.allSettled().js"></script>
+    <script src="./JunPromise_6_实现Promise.allSettled()和Promise.any().js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -97,7 +97,7 @@
         //     return 444
         // })
 
-        // const promises = [
+        // const promises1 = [
         //     new JunPromise(function(resolve, reject){
         //         setTimeout(() => {
         //             resolve(111)
@@ -113,19 +113,44 @@
         //     }),
         // ];
 
-        // let p6_1 = JunPromise.allSettled(promises)
+        // let p6_1 = JunPromise.allSettled(promises1)
         // p6_1.then(function(result){
         //     console.log(result)
         // })
 
-        const resolved = JunPromise.resolve(42);
-        const rejected = JunPromise.reject(-1);
+        // const promises2 = [
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(111)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             reject(333)
+        //         }, 1000);
+        //     }),
+        // ];
 
-        const p6_2 = JunPromise.allSettled([resolved, rejected]);
+        // (async function(){
+        //     try {
+        //         await JunPromise.allSettled(promises2);
+        //         console.log('所有请求都成功。');
+        //     } catch {
+        //         console.log('至少一个请求失败，其他请求可能还没结束。');
+        //     }
+        // })()
 
-        p6_2.then(function (results) {
-            console.log(results);
-        });
+
+        // const resolved = JunPromise.resolve(42);
+        // const rejected = JunPromise.reject(-1);
+
+        // const p6_2 = JunPromise.allSettled([resolved, rejected]);
+
+        // p6_2.then(function (results) {
+        //     console.log(results);
+        // });
+
     </script>
 </body>
 </html>
