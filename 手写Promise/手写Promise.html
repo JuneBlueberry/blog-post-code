@@ -7,7 +7,8 @@
     <!-- <script src="./JunPromise_2_实现Promise.prototype.then().js"></script> -->
     <!-- <script src="./JunPromise_3_实现Promise.resolve()和Promise.reject().js"></script> -->
     <!-- <script src="./JunPromise_4_实现Promise.prototype.catch()和finally().js"></script> -->
-    <script src="./JunPromise_6_实现Promise.allSettled()和Promise.any().js"></script>
+    <script src="./JunPromise_5_实现Promise.all()和Promise.race().js"></script>
+    <!-- <script src="./JunPromise_6_实现Promise.allSettled()和Promise.any().js"></script> -->
     <title>Document</title>
 </head>
 <body>
@@ -151,39 +152,138 @@
         //     console.log(results);
         // });
 
+        // const promises1 = [
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(111)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         reject(333)
+        //     }),
+        // ];
+
+        // const p7_1 = JunPromise.any(promises1);
+        // p7_1.then(function(result){
+        //     console.log(result)
+        // })
+
+        // const promises2 = [
+        //     new JunPromise(function(resolve, reject){
+        //         reject(111)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         reject(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         reject(333)
+        //     }),
+        // ];
+
+        // const p7_2 = JunPromise.any(promises2);
+        // p7_2.catch(function(result){
+        //     console.log(result)
+        // })
+
+        
+
+        // promise.all 测试-start
+        // const promises1 = [
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             resolve(111)
+        //         }, 2000);
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(333)
+        //     }),
+        // ];
+
+        // let p8_1 = JunPromise.all(promises1)
+        // p8_1.then(function(result){
+        //     console.log(result)
+        // })
+
+        // const promises2 = [
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(111)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             reject(222)
+        //         }, 1000);
+        //         // resolve(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             reject(333)
+        //         }, 1000);
+        //     }),
+        // ];
+
+        // (async function(){
+        //     try {
+        //         await JunPromise.all(promises2);
+        //         console.log('所有请求都成功。');
+        //     } catch(err) {
+        //         console.log('至少一个请求失败，失败原因：',err);
+        //     }
+        // })()
+        // promise.all 测试-end
+
+
+        // promise.race 测试-start
         const promises1 = [
             new JunPromise(function(resolve, reject){
-                resolve(111)
+                setTimeout(() => {
+                    resolve(111)
+                }, 2000);
             }),
             new JunPromise(function(resolve, reject){
                 resolve(222)
             }),
             new JunPromise(function(resolve, reject){
-                reject(333)
+                resolve(333)
             }),
         ];
 
-        const p7_1 = JunPromise.any(promises1);
-        p7_1.then(function(result){
+        let p9_1 = JunPromise.race(promises1)
+        p9_1.then(function(result){
             console.log(result)
         })
 
         const promises2 = [
             new JunPromise(function(resolve, reject){
-                reject(111)
+                setTimeout(() => {
+                    resolve(111)
+                }, 1000);
             }),
             new JunPromise(function(resolve, reject){
-                reject(222)
+                setTimeout(() => {
+                    reject(222)
+                }, 500);
             }),
             new JunPromise(function(resolve, reject){
-                reject(333)
+                setTimeout(() => {
+                    reject(333)
+                }, 1000);
             }),
         ];
 
-        const p7_2 = JunPromise.any(promises2);
-        p7_2.catch(function(result){
-            console.log(result)
-        })
+        (async function(){
+            try {
+                let result = await JunPromise.race(promises2);
+                console.log('最快的请求结果为成功。',result);
+            } catch(err) {
+                console.log('最快的请求结果为失败，失败原因：',err);
+            }
+        })()
+        // promise.race 测试-end
+
 
     </script>
 </body>
