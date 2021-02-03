@@ -208,7 +208,7 @@ class JunPromise {
             pList.forEach(p => {
                 p.finally(() => {
                     if(p.status == 'fulfilled'){
-                        resolve(p)
+                        resolve(p.value)
                     }
                     else if(p.status == 'rejected'){
                         reject(p.reason)

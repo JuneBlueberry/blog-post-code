@@ -196,15 +196,23 @@
         //         }, 2000);
         //     }),
         //     new JunPromise(function(resolve, reject){
-        //         resolve(222)
+        //         reject(222)
         //     }),
         //     new JunPromise(function(resolve, reject){
         //         resolve(333)
         //     }),
+        //     new JunPromise((resolve, reject) => {
+        //     throw new Error('出错了')
+        //     })
+        //     .catch(function(e){
+        //         console.log(e)
+        //     })
         // ];
 
         // let p8_1 = JunPromise.all(promises1)
         // p8_1.then(function(result){
+        //     console.log(result)
+        // },function(result){
         //     console.log(result)
         // })
 
@@ -237,51 +245,53 @@
 
 
         // promise.race 测试-start
-        const promises1 = [
-            new JunPromise(function(resolve, reject){
-                setTimeout(() => {
-                    resolve(111)
-                }, 2000);
-            }),
-            new JunPromise(function(resolve, reject){
-                resolve(222)
-            }),
-            new JunPromise(function(resolve, reject){
-                resolve(333)
-            }),
-        ];
+        // const promises1 = [
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             resolve(111)
+        //         }, 2000);
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(222)
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         resolve(333)
+        //     }),
+        // ];
 
-        let p9_1 = JunPromise.race(promises1)
-        p9_1.then(function(result){
-            console.log(result)
-        })
+        // let p9_1 = JunPromise.race(promises1)
+        // p9_1.then(function(result){
+        //     console.log(result)
+        // },function(result){
+        //     console.log(result)
+        // })
 
-        const promises2 = [
-            new JunPromise(function(resolve, reject){
-                setTimeout(() => {
-                    resolve(111)
-                }, 1000);
-            }),
-            new JunPromise(function(resolve, reject){
-                setTimeout(() => {
-                    reject(222)
-                }, 500);
-            }),
-            new JunPromise(function(resolve, reject){
-                setTimeout(() => {
-                    reject(333)
-                }, 1000);
-            }),
-        ];
+        // const promises2 = [
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             resolve(111)
+        //         }, 1000);
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             reject(222)
+        //         }, 500);
+        //     }),
+        //     new JunPromise(function(resolve, reject){
+        //         setTimeout(() => {
+        //             reject(333)
+        //         }, 1000);
+        //     }),
+        // ];
 
-        (async function(){
-            try {
-                let result = await JunPromise.race(promises2);
-                console.log('最快的请求结果为成功。',result);
-            } catch(err) {
-                console.log('最快的请求结果为失败，失败原因：',err);
-            }
-        })()
+        // (async function(){
+        //     try {
+        //         let result = await JunPromise.race(promises2);
+        //         console.log('最快的请求结果为成功。',result);
+        //     } catch(err) {
+        //         console.log('最快的请求结果为失败，失败原因：',err);
+        //     }
+        // })()
         // promise.race 测试-end
 
 

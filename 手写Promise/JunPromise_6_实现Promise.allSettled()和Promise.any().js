@@ -1,8 +1,8 @@
 /*
  * @Author: buleberry 
  * @Date: 2021-01-28 11:53:28 
- * @Last Modified by: blueberry
- * @Last Modified time: 2021-01-31 18:12:54
+ * @Last Modified by: buleberry
+ * @Last Modified time: 2021-02-01 17:36:31
  */
 
 /**
@@ -181,6 +181,41 @@ class JunPromise {
     //reject方法
     static reject = (callback) => {
         return new JunPromise((resolve, reject) => reject(callback))
+    }
+
+    //all方法
+    static all = (pList) => {
+        let result = [], indexLength = pList.length, index = 0
+        return new JunPromise((resolve, reject) => {
+            pList.forEach(p => {
+                p.finally(() => {
+                    if(p.status == 'rejected'){
+                        reject(p.reason)
+                    }
+                    result.push(p)
+                    index ++
+                    if(index === indexLength){
+                        resolve(result)
+                    }
+                })
+            });
+        })
+    }
+
+    // race方法
+    static race = (pList) => {
+        return new JunPromise((resolve, reject) => {
+            pList.forEach(p => {
+                p.finally(() => {
+                    if(p.status == 'fulfilled'){
+                        resolve(p.value)
+                    }
+                    else if(p.status == 'rejected'){
+                        reject(p.reason)
+                    }
+                })
+            })
+        })
     }
 
     //allSettled方法
