@@ -1,0 +1,183 @@
+.cat-btn{
+  font-size: 12px;
+  border-radius: 0px;
+  padding: 8px 16px;
+  height: 32px;
+  line-height: 14px;
+
+  border: 1px solid #dddddd;
+  background-color: #f7f7f7;
+  color: #000000;
+
+  &:hover{
+    background-color: #ffffff;
+  }
+}
+
+//按钮类型--Type
+.cat-btn-type-primary{
+  border: 1px solid #0099cc;
+  background-color: #0099cc;
+  color: #ffffff;
+
+  &:hover{
+    border: 1px solid #28B5D6;
+    background-color: #28B5D6;
+  }
+}
+.cat-btn-type-success{
+  border: 1px solid #4db118;
+  background-color: #4db118;
+  color: #ffffff;
+
+  &:hover{
+    border: 1px solid #57bc20;
+    background-color: #57bc20
+  }
+}
+.cat-btn-type-info{
+  border: 1px solid #909399;
+  background-color: #909399;
+  color: #ffffff;
+
+  &:hover{
+    border: 1px solid #a5a9af;
+    background-color: #a5a9af;
+  }
+}
+.cat-btn-type-warning{
+  border: 1px solid #e79302;
+  background-color: #e79302;
+  color: #ffffff;
+
+  &:hover{
+    border: 1px solid #ffa200;
+    background-color: #ffa200;
+  }
+}
+.cat-btn-type-error{
+  border: 1px solid #f25721;
+  background-color: #f25721;
+  color: #ffffff;
+
+  &:hover{
+    border: 1px solid #fc6824;
+    background-color: #fc6824;
+  }
+}
+
+//按钮是否圆角--round
+.cat-btn.is-round{
+  border-radius: 5px;
+}
+
+//按钮是否可点击--disabled
+.cat-btn.is-disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #f7f7f7;
+}
+.cat-btn-type-primary.is-disabled{
+  background-color: #0099cc;
+}
+.cat-btn-type-success.is-disabled{
+  background-color: #4db118;
+}
+.cat-btn-type-info.is-disabled{
+  background-color: #909399;
+}
+.cat-btn-type-warning.is-disabled{
+  background-color: #e79302;
+}
+.cat-btn-type-error.is-disabled{
+  background-color: #f25721;
+}
+
+//按钮是否有填充颜色--plain
+.cat-btn.is-plain{
+  &:hover{
+    color: #0099cc;
+    border: 1px solid #0099cc;
+  }
+}
+.cat-btn-type-primary.is-plain{
+  color: #0099cc;
+  border: 1px solid #0099cc;
+  background-color: #ecf5ff;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #0099cc;
+    border: 1px solid #0099cc;
+  }
+}
+.cat-btn-type-success.is-plain{
+  color: #4db118;
+  border: 1px solid #4db118;
+  background-color: #f0f9eb;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #4db118;
+    border: 1px solid #4db118;
+  }
+}
+.cat-btn-type-info.is-plain{
+  color: #909399;
+  border: 1px solid #909399;
+  background-color: #f4f4f5;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #909399;
+    border: 1px solid #909399;
+  }
+}
+.cat-btn-type-warning.is-plain{
+  color: #e79302;
+  border: 1px solid #e79302;
+  background-color: #fdf6ec;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #e79302;
+    border: 1px solid #e79302;
+  }
+}
+.cat-btn-type-error.is-plain{
+  color: #f25721;
+  border: 1px solid #f25721;
+  background-color: #fef0f0;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #f25721;
+    border: 1px solid #f25721;
+  }
+}
+
+//按钮的尺寸--size
+.cat-btn-size-big{
+  font-size: 16px;
+  padding: 8px 16px;
+  height: 42px;
+  line-height: 26px;
+}
+.cat-btn-size-catdium{
+  font-size: 15px;
+  padding: 8px 16px;
+  height: 38px;
+  line-height: 22px;
+}
+.cat-btn-size-small{
+  font-size: 13px;
+  padding: 8px 16px;
+  height: 28px;
+  line-height: 12px;
+}
+.cat-btn-size-mini{
+  font-size: 12px;
+  padding: 8px 16px;
+  height: 24px;
+  line-height: 8px;
+}

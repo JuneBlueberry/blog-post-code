@@ -188,7 +188,7 @@ class JunPromise {
         let result = [], indexLength = pList.length, index = 0
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(() => {
+                JunPromise.resolve(p).finally(() => {
                     if(p.status == 'rejected'){
                         reject(p.reason)
                     }
@@ -206,7 +206,7 @@ class JunPromise {
     static race = (pList) => {
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(() => {
+                JunPromise.resolve(p).finally(() => {
                     if(p.status == 'fulfilled'){
                         resolve(p.value)
                     }

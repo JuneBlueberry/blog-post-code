@@ -1,8 +1,8 @@
 /*
  * @Author: buleberry 
  * @Date: 2021-01-27 11:09:03 
- * @Last Modified by: blueberry
- * @Last Modified time: 2021-01-31 18:12:45
+ * @Last Modified by: buleberry
+ * @Last Modified time: 2021-02-08 17:48:27
  */
 
  /**
@@ -17,7 +17,12 @@
  class JunPromise {
     //构造函数
     constructor(execute){
-        execute(this.resolve, this.reject)
+        try {
+            execute(this.resolve, this.reject)
+        } catch (error) {
+            this.reject(error)
+        }
+        
     }
 
     //状态 (pending-等待，fulfilled-完成，rejected-失败)
@@ -137,7 +142,7 @@
     finally = (callback) => {
         return this.then(
             value => JunPromise.resolve(callback()).then(() => value),
-            reason => JunPromise.resolve(callback()).then(() => reason)
+            reason => JunPromise.resolve(callback()).then(() => { throw reason })
         )
     }
 

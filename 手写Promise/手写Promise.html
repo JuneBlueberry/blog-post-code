@@ -77,6 +77,13 @@
         //     console.log(error)
         // })
 
+        // let p3_3 = new JunPromise(function(resolve, reject) {
+        //     throw new Error('test');
+        // });
+        // p3_3.catch(function(error) {
+        //     console.log(error);
+        // });
+
         // let p5_1 = new JunPromise(function(resolve, reject){
         //     setTimeout(() => {
         //         reject(111)
@@ -96,6 +103,21 @@
         // let p5_3 = p5_2.finally(function(){
         //     console.log(333)
         //     return 444
+        // })
+
+        // let p5_4 = new JunPromise(function(resolve, reject){
+        //     resolve(111)
+        // })
+        // let p5_5 = new JunPromise(function(resolve, reject){
+        //     resolve(222)
+        // }).then(function(result){
+        //     console.log(result)
+        // })
+        // let p5_6 = p5_4.finally(function(){
+        //     return p5_5
+        // })
+        // p5_6.then((result) => {
+        //     console.log(result)
         // })
 
         // const promises1 = [
@@ -189,32 +211,28 @@
         
 
         // promise.all 测试-start
-        // const promises1 = [
-        //     new JunPromise(function(resolve, reject){
-        //         setTimeout(() => {
-        //             resolve(111)
-        //         }, 2000);
-        //     }),
-        //     new JunPromise(function(resolve, reject){
-        //         reject(222)
-        //     }),
-        //     new JunPromise(function(resolve, reject){
-        //         resolve(333)
-        //     }),
-        //     new JunPromise((resolve, reject) => {
-        //     throw new Error('出错了')
-        //     })
-        //     .catch(function(e){
-        //         console.log(e)
-        //     })
-        // ];
+        const promises1 = [
+            111,
+            new JunPromise(function(resolve, reject){
+                setTimeout(() => {
+                    resolve(111)
+                }, 2000);
+            }),
+            new JunPromise(function(resolve, reject){
+                reject(222)
+            }),
+            new JunPromise(function(resolve, reject){
+                resolve(333)
+            }),
+        ];
 
-        // let p8_1 = JunPromise.all(promises1)
-        // p8_1.then(function(result){
-        //     console.log(result)
-        // },function(result){
-        //     console.log(result)
-        // })
+        let p8_1 = JunPromise.all(promises1)
+        console.log(p8_1)
+        p8_1.then(function(result){
+            console.log(result)
+        },function(result){
+            console.log(result)
+        })
 
         // const promises2 = [
         //     new JunPromise(function(resolve, reject){

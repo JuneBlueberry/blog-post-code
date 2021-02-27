@@ -2,7 +2,7 @@
  * @Author: buleberry 
  * @Date: 2021-01-28 11:53:28 
  * @Last Modified by: buleberry
- * @Last Modified time: 2021-02-01 17:36:31
+ * @Last Modified time: 2021-02-09 11:54:18
  */
 
 /**
@@ -188,7 +188,7 @@ class JunPromise {
         let result = [], indexLength = pList.length, index = 0
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(() => {
+                JunPromise.resolve(p).finally(() => {
                     if(p.status == 'rejected'){
                         reject(p.reason)
                     }
@@ -206,7 +206,7 @@ class JunPromise {
     static race = (pList) => {
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(() => {
+                JunPromise.resolve(p).finally(() => {
                     if(p.status == 'fulfilled'){
                         resolve(p.value)
                     }
@@ -223,7 +223,7 @@ class JunPromise {
         let result = [], indexLength = pList.length
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(() => {
+                JunPromise.resolve(p).finally(() => {
                     result.push(p)
                     if(result.length === indexLength){
                         resolve(result)
@@ -239,7 +239,7 @@ class JunPromise {
         let successValue = undefined, failReasonList = []
         return new JunPromise((resolve, reject) => {
             pList.forEach(p => {
-                p.finally(() => {
+                JunPromise.resolve(p).finally(() => {
                     if(!isSuccess){
                         if(p.status == 'fulfilled'){
                             isSuccess = true
