@@ -1,5 +1,5 @@
-> 个人博客: [JuneBlueberry](https://juneblueberry.github.io/)
-> CSDN：[JuneBlueberry](https://blog.csdn.net/BlueBlueBerry)
+> - 个人博客: [JuneBlueberry](https://juneblueberry.github.io/)
+> - CSDN: [JuneBlueberry](https://blog.csdn.net/BlueBlueBerry)
 
 ### 文章列表
 
