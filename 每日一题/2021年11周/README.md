@@ -1,6 +1,6 @@
-> 2021年12周
+> 2021年11周
 
-### 20210306-用CSS画出圆，半圆，椭圆
+### 20210316-用CSS画出圆，半圆，椭圆
 
 ```html
 <body>
@@ -27,5 +27,32 @@
 .oval {
   height: 50px;
   border-radius: 50%;
+}
+```
+
+### 20210317-手写一个JS深拷贝
+
+- 1.JSON.parse() + JSON.stringify()
+
+```javascript
+function depthCopy(objs){
+  return JSON.parse(JSON.stringify(objs))
+}
+```
+
+- 2.遍历 + 递归
+```javascript
+function depthCopy(objs){
+  let result = {}
+
+  if(typeof objs === 'object'){
+    for (let obj in objs) {
+      result[obj] = typeof objs[obj] === 'object' ? depthCopy(objs[obj]) : objs[obj]
+    }
+  } else {
+    result = objs
+  }
+
+  return result
 }
 ```
