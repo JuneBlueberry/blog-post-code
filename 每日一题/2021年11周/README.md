@@ -1,6 +1,6 @@
 > 2021年11周
 
-### 20210316-用CSS画出圆，半圆，椭圆
+### 20210316-用CSS画出圆，半圆，椭圆 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
 
 ```html
 <body>
@@ -30,7 +30,7 @@
 }
 ```
 
-### 20210317-手写一个JS深拷贝
+### 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
 
 - 1.JSON.parse() + JSON.stringify()
 
