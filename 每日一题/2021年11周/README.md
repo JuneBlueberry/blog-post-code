@@ -1,6 +1,6 @@
-> 2021年11周
+> ## 2021年11周
 
-### 20210316-用CSS画出圆，半圆，椭圆 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
+> ### 20210316-用CSS画出圆，半圆，椭圆 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
 
 ```html
 <body>
@@ -30,9 +30,9 @@
 }
 ```
 
-### 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
+> ### 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
 
-- ###### 方法1.JSON.parse() + JSON.stringify()
+- ##### 方法1.JSON.parse() + JSON.stringify()
 
 ```javascript
 function depthCopy(objs){
@@ -40,7 +40,7 @@ function depthCopy(objs){
 }
 ```
 
-- ###### 方法2.遍历 + 递归
+- ##### 方法2.遍历 + 递归
 
 ```javascript
 function depthCopy(objs){
@@ -58,9 +58,9 @@ function depthCopy(objs){
 }
 ```
 
-### 20210318-实现Function.prototype.call() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/3)
+> ### 20210318-实现Function.prototype.call() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/3)
 
-- ###### call
+- #### call
 call() 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。举个栗子 X 1
 ```javascript
 let obj = {
@@ -77,7 +77,7 @@ demo.call(obj)  // 1
 1.执行demo函数
 2.执行demo函数时， call将其this指向了obj
 
-- ###### 基本版本
+- #### 基本版本
 
 1.将要运行的函数设置为call()传入的this的属性
 2.运行函数
@@ -100,7 +100,7 @@ function demo(){
 demo.mycall(obj);   // 1
 ```
 
-- ###### 允许传入参数
+- #### 允许传入参数
 
 call()方法运行传入参数，从第2个参数开始会作为函数的参数传入，举个栗子 X 2
 
@@ -139,7 +139,7 @@ function demo(s1, s2){
 demo.mycall(obj, 'hello', 'world');   // 1, hellocall
 ```
 
-- ###### this可以为null, 函数运行有返回值
+- #### this可以为null, 函数运行有返回值
 
 call() 的第一个参数可以为null, 此时调用函数的this指向window，同时允许函数有返回值,举个栗子 X 3
 
