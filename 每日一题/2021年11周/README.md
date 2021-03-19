@@ -1,5 +1,42 @@
  ## 2021年11周
 
+> ### 20210315-JS判断一个对象是否为空对象 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
+
+- #### 1、JSON.stringify()
+将对象转成字符串进行比较
+```javascript
+let obj = {}
+JSON.stringify(obj) === '{}'   //true
+```
+
+- #### 2、for...in 循环
+```javascript
+function isObj(obj){
+  for (let key in obj) {
+    return false
+  }
+  return true
+}
+
+isObj({})	//true
+```
+
+- #### 3、Object.getOwnPropertyNames()
+此方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+```javascript
+let obj = {}
+Object.keys(obj).length === 0  //true
+```
+
+> 注意：Object.getOwnPropertyNames()不兼容IE8及以下
+
+- #### 4、Object.keys()
+Object.keys()是ES6的新方法，和第3点返回值一样
+```javascript
+let obj = {}
+Object.getOwnPropertyNames(obj).length === 0	//true
+```
+
 > ### 20210316-用CSS画出圆，半圆，椭圆 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
 
 ```html
@@ -32,7 +69,7 @@
 
 > ### 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
 
-- ##### 方法1.JSON.parse() + JSON.stringify()
+- #### 方法1.JSON.parse() + JSON.stringify()
 
 ```javascript
 function depthCopy(objs){
@@ -40,7 +77,7 @@ function depthCopy(objs){
 }
 ```
 
-- ##### 方法2.遍历 + 递归
+- #### 方法2.遍历 + 递归
 
 ```javascript
 function depthCopy(objs){
