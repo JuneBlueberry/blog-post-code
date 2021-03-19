@@ -3,7 +3,7 @@
 > 2021年09周
   - [x] 20210301-JS的数据类型
   - [x] 20210302-以下typeof分别输出什么
-  - [x] 20210317-手写一个JS深拷贝 
+  - [x] 20210303-以下Object.prototype.toString.call()分别输出什么 
 
 > 2021年11周
   - [x] 20210315-JS判断一个对象是否为空对象 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/4)
