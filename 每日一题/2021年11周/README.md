@@ -225,3 +225,36 @@ demo.mycall(null)     //2
 let result = demo.mycall(obj);    // 1
 console.log(result)   // {value: 1}
 ```
+
+
+> ### 20210319-实现Function.prototype.apply() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/5)
+
+apply()和call()使用一样，只是传入的参数是一个数组
+
+```javascript
+Function.prototype.myapply = function (context) {
+  let _context = context || window
+
+  _context.fn = this
+  let result = _context.fn(...(arguments[1] || []))
+  delete _context.fn
+
+  return result
+}
+
+var value = 2    //window.value = 2
+let obj = {
+  value: 1
+}
+function demo(s1, s2) {
+  console.log(this.value)
+  console.log(s1, s2)
+  return {
+    value: this.value
+  }
+}
+
+demo.myapply(null)    // 2 undefined undefined
+let result = demo.myapply(obj, ['hello', 'apply']);   // 1 hello apply
+console.log(result)   //    {value: 1}
+```
