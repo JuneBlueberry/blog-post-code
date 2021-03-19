@@ -1,6 +1,6 @@
  ## 2021年11周
 
-> ### 20210315-JS判断一个对象是否为空对象 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
+> ### 20210315-JS判断一个对象是否为空对象 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/4)
 
 - #### 1、JSON.stringify()
 将对象转成字符串进行比较
