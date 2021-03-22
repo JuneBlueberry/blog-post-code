@@ -12,3 +12,4 @@
   - [x] 20210318-实现Function.prototype.call() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/3)
   - [x] 20210319-实现Function.prototype.apply() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/5)
   - [x] 20210320-实现Number的加减乘除链式
+  - [x] 20210321-文字单行超出显示省略号

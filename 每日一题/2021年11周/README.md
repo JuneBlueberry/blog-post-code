@@ -1,6 +1,6 @@
-## 2021年11周
+> ### 2021年11周
 
-> ### 20210315-JS判断一个对象是否为空对象 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/4)
+## 20210315-JS判断一个对象是否为空对象 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/4)
 
 - #### 1、JSON.stringify()
 将对象转成字符串进行比较
@@ -37,7 +37,7 @@ let obj = {}
 Object.getOwnPropertyNames(obj).length === 0	//true
 ```
 
-> ### 20210316-用CSS画出圆，半圆，椭圆 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
+## 20210316-用CSS画出圆，半圆，椭圆 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/1)
 
 ```html
 <body>
@@ -67,7 +67,7 @@ Object.getOwnPropertyNames(obj).length === 0	//true
 }
 ```
 
-> ### 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
+## 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
 
 - #### 方法1.JSON.parse() + JSON.stringify()
 
@@ -95,7 +95,7 @@ function depthCopy(objs){
 }
 ```
 
-> ### 20210318-实现Function.prototype.call() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/3)
+## 20210318-实现Function.prototype.call() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/3)
 
 - #### call
 call() 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。举个栗子 X 1
@@ -227,7 +227,7 @@ console.log(result)   // {value: 1}
 ```
 
 
-> ### 20210319-实现Function.prototype.apply() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/5)
+## 20210319-实现Function.prototype.apply() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/5)
 
 apply()和call()使用一样，只是传入的参数是一个数组
 
@@ -260,7 +260,7 @@ console.log(result)   //    {value: 1}
 ```
 
 
-> ### 20210320-实现Number的加减乘除链式
+## 20210320-实现Number的加减乘除链式
 
 给Number或者Object对象的原型中添加方法
 
@@ -295,4 +295,15 @@ let s = 10
 s.add(3).minus(5)              // 8
 s.times(3).divide(5)           // 6
 s.add(10).divide(5).times(2)   // 8
+```
+
+## 20210321-文字单行超出显示省略号
+
+```css
+.warpper {
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 ```
