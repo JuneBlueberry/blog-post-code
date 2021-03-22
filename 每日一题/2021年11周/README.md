@@ -258,3 +258,41 @@ demo.myapply(null)    // 2 undefined undefined
 let result = demo.myapply(obj, ['hello', 'apply']);   // 1 hello apply
 console.log(result)   //    {value: 1}
 ```
+
+
+> ### 20210320-实现Number的加减乘除链式
+
+给Number或者Object对象的原型中添加方法
+
+```javascript
+Number.prototype.isNumber = function(number){
+  if(typeof number != 'number'){
+    throw '请输入数字'
+  }
+}
+/// 加
+Number.prototype.add = function(number){
+  this.isNumber(number)
+  return this.valueOf() + number
+}
+/// 减
+Number.prototype.minus = function(number){
+  this.isNumber(number)
+  return this.valueOf() - number
+}
+/// 乘
+Number.prototype.times = function(number){
+  this.isNumber(number)
+  return this.valueOf() * number
+}
+/// 除
+Number.prototype.divide = function(number){
+  this.isNumber(number)
+  return this.valueOf() / number
+}
+
+let s = 10
+s.add(3).minus(5)              // 8
+s.times(3).divide(5)           // 6
+s.add(10).divide(5).times(2)   // 8
+```
