@@ -11,3 +11,4 @@
   - [x] 20210317-手写一个JS深拷贝 [issure](https://github.com/JuneBlueberry/blog-post-code/issues/2)
   - [x] 20210318-实现Function.prototype.call() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/3)
   - [x] 20210319-实现Function.prototype.apply() [issure](https://github.com/JuneBlueberry/blog-post-code/issues/5)
+  - [x] 20210320-实现Number的加减乘除链式
