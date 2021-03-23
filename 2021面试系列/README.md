@@ -33,7 +33,7 @@
 |   3月24日  |          HTML            |                      |
 |  3月25日   |          CSS             |                      |
 
-### HTML -[x]
+### HTML
 
 - 前端基础拾遗90问: https://juejin.cn/post/6844904116552990727#heading-67
 - HTML 面试知识点总结: https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Html/Html.md
