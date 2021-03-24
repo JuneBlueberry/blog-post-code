@@ -24,7 +24,7 @@
 - Vue, Vuex, Vue-router
 - Webpack, Typescript
 - 函数式编程, 浏览器, http, SEO
-- HTML离线缓存
+- HTML离线缓存, 前端优化, Waterfall瀑布流
 - 算法
 
 复习进度
@@ -89,3 +89,10 @@
 ### HTML离线缓存
 
 - HTML5 离线缓存-manifest简介：https://yanhaijing.com/html/2014/12/28/html5-manifest/
+
+
+### Waterfall瀑布流
+
+- 前端性能之Chrome的Waterfall: https://blog.csdn.net/carian_violet/article/details/84954360
+- 教你读懂网络请求的瀑布图: https://blog.csdn.net/csdn_girl/article/details/54911632
+- 前端妹子跟我抱怨她们的页面加载很慢的时候，如何在她面前优雅地装逼: https://www.zhihu.com/question/27085552/answer/35194131
