@@ -32,7 +32,7 @@
 |   日期  |           TODO              |     Note             |
 | --------| --------------------------- | ---------------------|
 |   3月23日  |          HTML概念基础     |                      |
-|   3月24日  |          HTML            |                      |
+|   3月24日  |          CSS            |                      |
 |   3月25日  |          CSS             |                      |
 
 ### HTML
@@ -96,3 +96,8 @@
 - 前端性能之Chrome的Waterfall: https://blog.csdn.net/carian_violet/article/details/84954360
 - 教你读懂网络请求的瀑布图: https://blog.csdn.net/csdn_girl/article/details/54911632
 - 前端妹子跟我抱怨她们的页面加载很慢的时候，如何在她面前优雅地装逼: https://www.zhihu.com/question/27085552/answer/35194131
+
+
+### 前端优化
+
+-  CSS 优化，提高性能的方法：https://www.jianshu.com/p/4e673bf24a3b
