@@ -9,30 +9,43 @@
 </head>
 
 <body>
-  <input type="text" oninput="changeContent()" />
+  <input type="text" id="input1" />
+  <br /> <br />
+  <input type="text" id="input2">
+
+  <script>
+    var timeout = null  //全局的
+    document.getElementById('input1').addEventListener('input', function(){
+      if(timeout) clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        //处理业务
+        console.log('防抖')
+      }, 1000);
+    })
+  </script>
 
   <script>
     function debounce(func, wait) {
-      let timeout = null
+      console.log(this)   //指向window
+      let timeout = null  //闭包
       return function () {
-        let context = this
-        let args = arguments
         if (timeout) clearTimeout(timeout)
         console.log(wait)
         timeout = setTimeout(() => {
-          func.apply(context, args)
+          func.apply(this, arguments)     //这里的this指向demo中的input
         }, wait)
       }
     }
 
-    function changeContent(){
-      debounce(function(){
-        console.log(111)
-      }, 1000)
+    function demo(){
+      console.log(this)
+      console.log('防抖')
     }
 
+    document.getElementById('input2').addEventListener('input', debounce(demo, 1000))
 
   </script>
+
 </body>
 
 </html>
