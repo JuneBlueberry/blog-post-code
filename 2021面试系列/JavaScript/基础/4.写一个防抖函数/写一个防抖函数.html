@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" oninput="changeContent()" />
+
+  <script>
+    function debounce(func, wait) {
+      let timeout = null
+      return function () {
+        let context = this
+        let args = arguments
+        if (timeout) clearTimeout(timeout)
+        console.log(wait)
+        timeout = setTimeout(() => {
+          func.apply(context, args)
+        }, wait)
+      }
+    }
+
+    function changeContent(){
+      debounce(function(){
+        console.log(111)
+      }, 1000)
+    }
+
+
+  </script>
+</body>
+
+</html>

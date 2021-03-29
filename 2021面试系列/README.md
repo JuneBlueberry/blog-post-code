@@ -33,7 +33,9 @@
 | --------| --------------------------- | ---------------------|
 |   3月23日  |          HTML概念基础     |                      |
 |   3月24日  |          CSS             |                      |
-|   3月25日  |          Vue相关         |                      |
+|   3月25日  |          Vue相关         |                       |
+|   3月26日  |          Vue相关         |                       |
+|   3月29日  |          JS基础          |                       |
 
 ### HTML
 
@@ -48,22 +50,24 @@
 ### JS-基础
 
 - 前端基础拾遗90问: https://juejin.cn/post/6844904116552990727#heading-0
+- 中高级前端开发高频面试题: https://juejin.cn/post/6844903854107000839#heading-7
+- 前端 100 问: https://github.com/yygmind/blog/issues/43
 
 ### JS-类型转换
 
-- 霖呆呆【类型转换系列】：https://juejin.im/post/5e7f8314e51d4546fa4511c9
+- 霖呆呆【类型转换系列】: https://juejin.im/post/5e7f8314e51d4546fa4511c9
 
 ### JS-调用堆栈
-- 霖呆呆的【JS进阶系列】：https://juejin.im/post/5db85b866fb9a0207d4cbf92
+- 霖呆呆的【JS进阶系列】: https://juejin.im/post/5db85b866fb9a0207d4cbf92
 
 ### JS-作用域和闭包
 
 - Jsliang2019: https://juejin.im/post/5c8e4cd3f265da67c87454a0#heading-28
-- 三元JS上：https://juejin.im/post/5dac5d82e51d45249850cd20#heading-23
+- 三元JS上: https://juejin.im/post/5dac5d82e51d45249850cd20#heading-23
 
 ### JS-this指向
 
-- 霖呆呆的【this题：https://juejin.im/post/5e6358256fb9a07cd80f2e70
+- 霖呆呆的this题：https://juejin.im/post/5e6358256fb9a07cd80f2e70
 
 ### JS-原型和原型链
 
