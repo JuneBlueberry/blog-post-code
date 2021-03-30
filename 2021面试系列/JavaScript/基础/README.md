@@ -105,3 +105,116 @@ function throttle(func, wait){
 
 
 ### 6.数组扁平化
+
+对于[1, [1,2], [1,2,3]]这样多层嵌套的数组，我们如何将其扁平化为[1, 1, 2, 1, 2, 3]这样的一维数组呢
+
+- 使用ES6的方法：Array.flat()
+- 递归
+- reduce递归
+
+
+### 7.使用setTimeout实现setInterval
+
+在setTimeout的方法里面又调用了一次setTimeout
+
+
+### 8.数组中forEach和map的区别
+
+相同点
+- 都是循环遍历数组中的每一项，使用break会摆错，return也不会跳出循环
+- forEach和map方法里每次执行匿名函数都支持3个参数，参数分别是item（当前每一项），index（索引值），arr（原数组） 
+- 匿名函数中的this都是指向window 只能遍历数组 都不会改变原数组
+
+不同点(map)
+- map方法返回一个新的数组，数组中的元素为原始数组调用函数处理后的值
+- map方法不会对空数组进行检测，若arr为空数组，则map方法返回的也是一个空数组。
+- 浏览器支持：chrome、Safari1.5+、opera都支持，IE9+
+
+不同点(forEach)
+- forEach方法用来调用数组的每个元素，将元素传给回调函数 
+- forEach对于空数组是不会调用回调函数的
+- 无论arr是不是空数组，forEach返回的都是undefined。这个方法只是将数组中的每一项作为callback的参数执行一次。
+
+
+### 9.for in和for of的区别
+
+可以用break终止循环，不能使用return,会报错
+
+for in
+- index索引为字符串型数字，不能直接进行几何运算
+- 遍历顺序有可能不是按照实际数组的内部顺序
+- 使用for in会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性。
+- for in更适合遍历对象，不要使用for in遍历数组。通常用for in来遍历对象的键名
+- for in 可以遍历到myObject的原型方法method,如果不想遍历原型方法和属性的话，可以在循环内部判断一下,hasOwnPropery方法可以判断某属性是否是该对象的实例属性
+- 可以通过ES5的Object.keys(myObject)获取对象的实例属性组成的数组，不包括原型方法和属性。
+
+for of
+- for of遍历的只是数组内的元素，而不包括数组的原型和属性
+
+
+### 10.实现一个EventEmitter方法
+
+EventEmitter的核心就是事件触发与事件监听器功能的封装  
+EventEmitter 方法主要包含了 on,emit,once,remove,removeAll方法  
+- on:为某个事件注册一个监听器
+- emit:按照顺序执行所有监听器
+- once：执行一次监听器，随后解除监听事件
+- remove: 移除某个监听事件
+- removeAll: 移除某个事件的所有监听
+
+```javascript
+class Event{
+
+  constructor(){
+    this.event = Object.create(null)
+  }
+
+  //给某个事件添加监听
+  on(name, backcall){
+    if(!this.event[name]){
+      this.event[name] = []
+    }
+    this.event[name].push(backcall)
+    return this
+  }
+
+  //按顺序执行事件中所有的监听
+  emit(name, ...args){
+    if(!this.event[name]){
+      return this
+    }
+    this.event[name].forEach(element => {
+      element.call(this, ...args)
+    });
+  }
+
+  //移除事件中某个监听
+  remove(name, backcall){
+    if(!this.event[name]){
+      return this
+    }
+    if(backcall){
+      let index = this.event[name].indexOf(backcall)
+      this.event[name].splice(index, 1)
+    }
+    return this
+  }
+
+  removeAll(name){
+    if(!this.event[name]){
+      return this
+    }
+    this.event[name] = null
+    return this
+  }
+
+  once(name, backcall){
+    let func = (...args) => {
+      backcall.call(this, ...args)
+      this.remove(name, func)
+    }
+    this.on(name, func)
+    return this
+  }
+}
+```
