@@ -218,3 +218,74 @@ class Event{
   }
 }
 ```
+
+
+### 11.typeof和instanceof
+
+- typeof可以用于检测基本数据类型和引用数据类型。
+- instanceof 用于判断一个变量是否某个对象的实例
+
+
+### 12.写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么
+
+主要是为了提升diff【同级比较】的效率。要实现前后列表的diff，如果对列表的每一项增加一个key，即唯一索引，那就可以很清楚的知道两个列表谁少了谁没变。而如果不加key的话，就只能一个个对比了
+
+
+### 13.['1', '2', '3'].map(parseInt)
+
+[1,NaN,NaN]
+- map(function backcall(cur,index,arr)) map的回调函数接收3个参数，当前值、索引、原数组
+- paresInt(string, radix) 接受2个参数，被处理的字符串、解析时的基数
+
+
+### 14.介绍下 Set、Map、WeakSet 和 WeakMap 的区别
+
+- Set：集合 以[value,value]的形式存储
+- Map：字典 以[key,value]的形式存储
+- WeekSet: 成员只能是对象，切为弱类型，所以必能遍历
+- WeekMap：只能是对象作为键名(除null)且为弱类型，垃圾回收不要考虑这些键名
+
+
+### 15.setTimeout、Promise、Async/Await 的区别
+
+主要是考察这三者在事件循环中的区别，事件循环中分为宏任务队列和微任务队列。
+
+- 其中settimeout的回调函数放到宏任务队列里，等到执行栈清空以后执行
+- promise.then里的回调函数会放到相应宏任务的微任务队列里，等宏任务里面的同步代码执行完再执行
+- async函数表示函数里面可能会有异步方法，await后面跟一个表达式，async方法执行时，遇到await会立即执行表达式，然后把表达式后面的代码放到微任务队列里，让出执行栈让同步代码先执行。
+
+
+### 16.JS 异步解决方案的发展历程以及优缺点。
+
+- 回调函数(callback)
+  优点：解决了同步问题
+  缺点：回调地狱，不能使用try/catch捕捉错误，不能return
+
+- Promise
+  优点：解决了回调地狱的问题
+  缺点：无法取消 Promise ，错误需要通过回调函数来捕获
+
+- Generator
+  特点：可以控制函数的执行，可以配合 co 函数库使用
+
+- async/await
+ 优点：代码清晰，不用像 Promise 写一大堆 then 链，处理了回调地狱的问题
+ 缺点：await 将异步代码改造成同步代码，如果多个异步操作没有依赖性而使用 await 会导致性能上的降低。
+
+
+ ### 判断数组的方法以及区别和优劣
+
+- Object.prototype.toString.call()
+  任何类型都可以判断，返回[object type]  
+- instanceof
+  判断对象的原型链上是不是能找到目标的prototype  
+  只能判断对象类型，不能判断原始类型，  
+  且所有 对象 instanceof Object === true  
+- Array.isArray()
+  用来判断对象是否为数组
+
+- instanceof 与 isArray
+当检测Array实例时，Array.isArray 优于 instanceof ，因为 Array.isArray 可以检测出 iframes
+
+- Array.isArray() 与 Object.prototype.toString.call()
+Array.isArray()是ES5新增的方法，当不存在 Array.isArray() ，可以用 Object.prototype.toString.call() 实现。

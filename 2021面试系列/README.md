@@ -19,13 +19,13 @@
 
 - html, css
 - 数据类型, 类型转化, 数组, 对象
-- 原型和原型链, 面向对象, 作用域, 继承, this, 闭包
-- Promise, Generator, await/async, Map, Set, Proxy
+- 原型和原型链, 面向对象, 继承, this, 作用域, 闭包
+- Promise, Generator, await/async, Map, Set, Proxy, Reflact
 - Vue, Vuex, Vue-router
 - Webpack, Typescript
 - 函数式编程, 浏览器, http, SEO
 - HTML离线缓存, 前端优化, Waterfall瀑布流
-- 算法
+- 算法, DFS和BFS
 
 复习进度
 
@@ -36,6 +36,13 @@
 |   3月25日  |          Vue相关         |                       |
 |   3月26日  |          Vue相关         |                       |
 |   3月29日  |          JS基础          |                       |
+|   3月30日  |          JS基础          |                       |
+
+
+### 综合体
+
+- 前端 100 问: https://github.com/yygmind/blog/issues/43
+
 
 ### HTML
 
@@ -47,11 +54,12 @@
 - 前端基础拾遗90问: https://juejin.cn/post/6844904116552990727#heading-75
 - CSS 面试知识点总结: https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Css/Css.md
 
+
 ### JS-基础
 
 - 前端基础拾遗90问: https://juejin.cn/post/6844904116552990727#heading-0
 - 中高级前端开发高频面试题: https://juejin.cn/post/6844903854107000839#heading-7
-- 前端 100 问: https://github.com/yygmind/blog/issues/43
+
 
 ### JS-类型转换
 
@@ -111,3 +119,18 @@
 
 - 公司要求会使用框架vue，面试题会被问及哪些？：https://juejin.cn/post/6844903858804621325#heading-0
 - 20+Vue面试题整理：https://juejin.cn/post/6844904084374290446
+
+
+### DFS和BFS
+
+
+### 面向对象 && 继承
+
+
+### Promise && Generator && await/async
+
+
+### Proxy && Reflact
+
+
+### 算法
