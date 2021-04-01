@@ -273,7 +273,7 @@ class Event{
  缺点：await 将异步代码改造成同步代码，如果多个异步操作没有依赖性而使用 await 会导致性能上的降低。
 
 
- ### 判断数组的方法以及区别和优劣
+ ### 17.判断数组的方法以及区别和优劣
 
 - Object.prototype.toString.call()
   任何类型都可以判断，返回[object type]  
@@ -289,3 +289,10 @@ class Event{
 
 - Array.isArray() 与 Object.prototype.toString.call()
 Array.isArray()是ES5新增的方法，当不存在 Array.isArray() ，可以用 Object.prototype.toString.call() 实现。
+
+
+### 18.关于 const 和 let 声明的变量不在 window 上
+
+- 在ES5中，顶层对象的属性和全局变量是等价的，var 命令和 function 命令声明的全局变量，自然也是顶层对象。
+- ES6规定，var 命令和 function 命令声明的全局变量，依旧是顶层对象的属性，但 let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性。  
+  通过debugger可以看到只是在一个块级作用域（Script）中
