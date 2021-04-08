@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class GraphicRepeater {
+      constructor() {
+        this._init();
+      }
+      _init() {
+        this._containerId = null;
+        // this._receiveDisplayItemsChange()
+      }
+      _onLoad() {
+        this._receiveDisplayItemsChange()
+      }
+      _receiveDisplayItemsChange() {
+        this._containerId = [5,6,7]
+      }
+    }
+    var _cwIgnored = new GraphicRepeater();
+
+    console.log(_cwIgnored);//_containerId:5,6,7
+    console.log(_cwIgnored._containerId);//null
+
+    _cwIgnored._containerId = [1,2,3]
+    console.log(_cwIgnored._containerId);
+
+// var Properties = [
+//      {Data:5},
+//      {Data:6},
+//      {Data:7}
+//     ]
+  </script>
+</body>
+
+</html>

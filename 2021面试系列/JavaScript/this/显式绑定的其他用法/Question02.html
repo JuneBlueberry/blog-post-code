@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo1(b) {
+      console.log(`${this.a} + ${b}`)
+      return this.a + b
+    }
+    var a = 1
+    var obj = {
+      a: 2
+    }
+
+    var foo2 = function () {
+      return foo1.call(obj, ...arguments)
+    }
+
+    var num = foo2(3)
+    console.log(num)
+
+    /**
+     * 2+3=5
+     */
+
+  </script>
+</body>
+
+</html>

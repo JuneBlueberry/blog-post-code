@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo(item) {
+      console.log(item, this.a)
+    }
+    var obj = {
+      a: 'obj'
+    }
+    var a = 'window'
+    var arr = [1, 2, 3]
+
+    // arr.forEach(foo, obj)
+    // arr.map(foo, obj)
+    arr.filter(function (i) {
+      console.log(i, this.a)
+      return i > 2
+    }, obj)
+
+    /**
+     * 1, obj
+     * 2, obj
+     * 3, obj
+     */
+
+  </script>
+</body>
+
+</html>

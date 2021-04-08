@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj = {
+      a: 'obj',
+      foo: function () {
+        console.log('foo:', this.a)
+        return function () {
+          console.log('inner:', this.a)
+        }
+      }
+    }
+    var a = 'window'
+    var obj2 = { a: 'obj2' }
+
+    obj.foo()()
+    obj.foo.call(obj2)()
+    obj.foo().call(obj2)
+
+    /**
+     * foo:obj
+     * inner:window
+     * obj:obj2
+     * inner:window
+     * foo:obj
+     * inner:obj2
+     */
+
+  </script>
+</body>
+
+</html>
