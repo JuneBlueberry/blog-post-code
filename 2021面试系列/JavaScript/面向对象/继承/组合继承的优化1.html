@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person() {
+      this.name = 'person'
+      this.play = [1, 2, 3]
+    }
+    function Chile() {
+      Person.call(this)
+      this.age = 18
+    }
+    Chile.prototype = Person.prototype
+
+    let s1 = new Chile()
+    let s2 = new Chile()
+
+    s1.play.push(4)
+    console.log(s1.play, s2.play)
+  </script>
+</body>
+
+</html>

@@ -86,6 +86,10 @@
 
 - 三元JS上：https://juejin.im/post/5dac5d82e51d45249850cd20#heading-23
 
+### JS-面向对象
+
+- 霖呆呆【JS面向对象系列】：https://juejin.im/post/5e707417e51d45272054d5d3
+
 ### JS-深浅拷贝
 
 - 霖呆呆【深浅拷贝问点】：https://github.com/LinDaiDai/niubility-coding-js/blob/master/JavaScript/深浅拷贝/深浅拷贝问点.md
@@ -93,10 +97,6 @@
 ### JS-深入数组
 
 - 三元【深入数组】：http://47.98.159.95/my_blog/nav/
-
-### JS-面向对象
-
-- 霖呆呆【JS面向对象系列】：https://juejin.im/post/5e707417e51d45272054d5d3
 
 ### 浏览器
 
