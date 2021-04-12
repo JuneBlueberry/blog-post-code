@@ -37,11 +37,12 @@
 |   3月26日  |          Vue相关         |                       |
 |   3月29日  |          JS基础          |                       |
 |   3月30日  |          JS基础          |                       |
-|   4月01日  |          JS类型转换      |                       |
-|   4月06日  |      JS类型转换, this    |                       |
-|   4月07日  |          this           |                        |
+|   4月01日  |          JS类型转换       |                       |
+|   4月06日  |      JS类型转换, this     |                       |
+|   4月07日  |          this            |                        |
 |   4月10日  |  作用域和闭包,原型和原型链 |                      |
-|   4月11日  |    面向对象              |                        |
+|   4月11日  |          面向对象         |                        |
+|   4月12日  |    Promise, 记录题目复习  |                        |
 
 
 ### 综合题
@@ -132,7 +133,15 @@
 ### 面向对象 && 继承
 
 
-### Promise && Generator && await/async
+### Promise && Generator && await/async && 异步
+
+- 三元【JS问下】：https://juejin.im/post/5dd8b3a851882572f56b578f#heading-43
+- 【最简实现Promise，支持异步链式调用（20行）】：https://juejin.im/post/5e6f4579f265da576429a907
+- 霖呆呆【Promise面试题】：https://juejin.im/post/5e58c618e51d4526ed66b5cf
+- 晨曦【手写await】： https://juejin.im/post/5e79e841f265da5726612b6e
+- 冴羽【ES6 系列之我们来聊聊 Async】：https://juejin.im/post/5bcf3e3f6fb9a05cd53b3e3d
+- nodejs中的异步、非阻塞I/O（学习）三元：http://47.98.159.95/my_blog/js-async/001.html#%E4%BB%80%E4%B9%88%E6%98%AFi-o%EF%BC%9F
+- node回调（学习）三元：https://juejin.im/post/5dd8b3a851882572f56b578f#heading-35
 
 
 ### Proxy && Reflact
