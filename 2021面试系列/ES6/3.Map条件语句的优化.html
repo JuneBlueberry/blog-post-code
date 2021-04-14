@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 例子 5-2
+    // 根据颜色找出对应的水果
+
+    // bad
+    function test(color) {
+      switch (color) {
+        case 'red':
+          return ['apple', 'strawberry'];
+        case 'yellow':
+          return ['banana', 'pineapple'];
+        case 'purple':
+          return ['grape', 'plum'];
+        default:
+          return [];
+      }
+    }
+
+    test('yellow'); // ['banana', 'pineapple']
+
+    // good
+    const fruitColor = {
+      red: ['apple', 'strawberry'],
+      yellow: ['banana', 'pineapple'],
+      purple: ['grape', 'plum']
+    };
+
+    function test(color) {
+      return fruitColor[color] || [];
+    }
+
+    // better
+    const fruitColor = new Map()
+      .set('red', ['apple', 'strawberry'])
+      .set('yellow', ['banana', 'pineapple'])
+      .set('purple', ['grape', 'plum']);
+
+    function test(color) {
+      return fruitColor.get(color) || [];
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.直接实现
+    // let p = Promise.resolve(1)
+    // p.then(s => {
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       console.log(s)
+    //       resolve(2)
+    //     }, 1000);
+    //   })
+    // }).then(s => {
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       console.log(s)
+    //       resolve(3)
+    //     }, 1000);
+    //   })
+    // }).then(s => {
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       console.log(s)
+    //       resolve(4)
+    //     }, 1000);
+    //   })
+    // })
+
+    //1的改价
+    let arr = [2,3,4]
+    arr.reduce((pre, cur) => {
+      return pre.then((res) => {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            console.log(res)
+            resolve(cur)
+          }, 1000);
+        })
+      })
+    }, Promise.resolve(1))
+  </script>
+</body>
+
+</html>

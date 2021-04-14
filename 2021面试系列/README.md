@@ -23,7 +23,7 @@
 - Promise, Generator, await/async, Map, Set, Proxy, Reflact
 - Vue, Vuex, Vue-router
 - Webpack, Typescript
-- 函数式编程, 浏览器, http, SEO
+- 函数式编程, 浏览器, http, SEO, 设计模式
 - HTML离线缓存, 前端优化, Waterfall瀑布流
 - 算法, DFS和BFS
 
@@ -39,10 +39,17 @@
 |   3月30日  |          JS基础          |                       |
 |   4月01日  |          JS类型转换       |                       |
 |   4月06日  |      JS类型转换, this     |                       |
-|   4月07日  |          this            |                        |
-|   4月10日  |  作用域和闭包,原型和原型链 |                      |
-|   4月11日  |          面向对象         |                        |
-|   4月12日  |    Promise, 记录题目复习  |                        |
+|   4月07日  |          this            |                       |
+|   4月10日  |  作用域和闭包,原型和原型链 |                       |
+|   4月11日  |          面向对象         |                       |
+|   4月12日  |          Promise         |                       |
+|   4月13日  |          Promise         |                       |
+|   4月14日  | 深入数组, ES6, Generator, await/async |           |
+
+|   4月15日  |      Proxy, Reflact      |                       |
+|   4月16日  |        浏览器, http       |                       |
+|   4月17日  | 前端优化, Waterfall瀑布流  |                       |
+|   4月18日  |    Webpack, Typescript    |                       |
 
 
 ### 综合题
@@ -66,6 +73,13 @@
 - 前端基础拾遗90问: https://juejin.cn/post/6844904116552990727#heading-0
 - 中高级前端开发高频面试题: https://juejin.cn/post/6844903854107000839#heading-7
 
+
+### ES6
+
+- 冴羽【ES6 完全使用手册】：https://juejin.im/post/5bfe05505188252098022400
+- ES6、ES7、ES8特性一锅炖(ES6、ES7、ES8学习指南)：https://juejin.im/post/5b9cb3336fb9a05d290ee47e
+- 霖呆呆【ES2019已经来了】：https://juejin.im/post/5b685ed1e51d4533f52859e8
+- 浪里行舟【盘点ES7、ES8、ES9、ES10新特性】https://juejin.im/post/5dda2b5e6fb9a07a83691766
 
 ### JS-类型转换
 
