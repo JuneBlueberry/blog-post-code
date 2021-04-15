@@ -45,9 +45,8 @@
 |   4月12日  |          Promise         |                       |
 |   4月13日  |          Promise         |                       |
 |   4月14日  | 深入数组, ES6, Generator, await/async |           |
-
-|   4月15日  |      Proxy, Reflact      |                       |
-|   4月16日  |        浏览器, http       |                       |
+|   4月15日  |      浏览器, http、tcp    |                        |
+|   4月16日  |      浏览器, http、tcp    |                       |
 |   4月17日  | 前端优化, Waterfall瀑布流  |                       |
 |   4月18日  |    Webpack, Typescript    |                       |
 
@@ -97,6 +96,7 @@
 
 - 霖呆呆的this题：https://juejin.im/post/5e6358256fb9a07cd80f2e70
 
+
 ### JS-原型和原型链
 
 - 三元JS上：https://juejin.im/post/5dac5d82e51d45249850cd20#heading-23
@@ -105,17 +105,40 @@
 
 - 霖呆呆【JS面向对象系列】：https://juejin.im/post/5e707417e51d45272054d5d3
 
+
 ### JS-深浅拷贝
 
 - 霖呆呆【深浅拷贝问点】：https://github.com/LinDaiDai/niubility-coding-js/blob/master/JavaScript/深浅拷贝/深浅拷贝问点.md
+
 
 ### JS-深入数组
 
 - 三元【深入数组】：http://47.98.159.95/my_blog/nav/
 
+
 ### 浏览器
 
 - Front-End-Interview-Notebook：https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Html/Html.md
+- 三元【浏览器灵魂之问】：https://juejin.im/post/5df5bcea6fb9a016091def69
+
+
+### HTTP
+
+- 霖呆呆【ShutdownHTTP系列】：https://github.com/LinDaiDai/niubility-coding-js/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C
+- 跨域（学习）：4h【10种跨域解决方案（附终极大招）】：https://juejin.im/post/5e948bbbf265da47f2561705
+- 代理/网关（学习）：2h【三元HTTP】：https://juejin.im/post/5e76bd516fb9a07cce750746#heading-51
+- 缓存（复习）：30Min【霖呆呆缓存】：https://juejin.im/post/5e2d7d3a6fb9a02fec665157
+
+
+### TCP
+
+- 三元【(建议收藏)TCP协议灵魂之问，巩固你的网路底层基础】：https://juejin.im/post/5e527c58e51d4526c654bf41
+
+
+### 网络安全
+
+- 童欧巴【网络安全】https://juejin.im/post/5e78d298f265da576a57a6bc#heading-0
+- 三元【浏览器灵魂之问】https://juejin.im/post/5df5bcea6fb9a016091def69#heading-74
 
 
 ### HTML离线缓存
