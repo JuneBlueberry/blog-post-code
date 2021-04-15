@@ -8,7 +8,8 @@ Model层代表数据模型，View代表UI组件，ViewModel是View和Model层的
 ### 1.简单说一下Vue2.x响应式数据原理
 
 数据劫持 + 发布者-订阅者
-Vue在初始化数据时，会使用Object.defineProperty重新定义data中的所有属性，当页面使用对应属性时，首先会进行依赖收集(收集当前组件的watcher)如果属性发生变化会通知相关依赖进行更新操作(发布订阅)。
+Vue在初始化数据时，会使用Object.defineProperty重新定义data中的所有属性
+当页面使用对应属性时，首先会进行依赖收集(收集当前组件的watcher)如果属性发生变化会通知相关依赖进行更新操作(发布订阅)。
 
 
 ### 2.Vue3.x响应式数据原理

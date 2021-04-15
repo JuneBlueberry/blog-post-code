@@ -45,7 +45,7 @@
 |   4月12日  |          Promise         |                       |
 |   4月13日  |          Promise         |                       |
 |   4月14日  | 深入数组, ES6, Generator, await/async |           |
-|   4月15日  |      浏览器, http、tcp    |                        |
+|   4月15日  |   Vue, 浏览器, http、tcp  |                        |
 |   4月16日  |      浏览器, http、tcp    |                       |
 |   4月17日  | 前端优化, Waterfall瀑布流  |                       |
 |   4月18日  |    Webpack, Typescript    |                       |
@@ -118,7 +118,6 @@
 
 ### 浏览器
 
-- Front-End-Interview-Notebook：https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Html/Html.md
 - 三元【浏览器灵魂之问】：https://juejin.im/post/5df5bcea6fb9a016091def69
 
 
@@ -162,6 +161,12 @@
 
 - 公司要求会使用框架vue，面试题会被问及哪些？：https://juejin.cn/post/6844903858804621325#heading-0
 - 20+Vue面试题整理：https://juejin.cn/post/6844904084374290446
+
+
+- 浪子神剑【vue 248个知识点（面试题）为你保驾护航】https://juejin.im/post/5d153267e51d4510624f9809
+- 子弈【在阿里我是如何当面试官的（持续更新）】：https://juejin.im/post/5e6ebfa86fb9a07ca714d0ec#heading-46
+- 晨曦【Vue 中 slot 和 slot-scope】：https://juejin.im/post/5e89f867f265da47dd3982f8
+- 晨曦【Vue 进阶必学之高阶组件 HOC】：https://juejin.im/post/5e8b5fa6f265da47ff7cc139
 
 
 ### DFS和BFS
