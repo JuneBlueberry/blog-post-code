@@ -7,23 +7,13 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="app">
+    <span class="aa" id="aa2" data="asasas">hahah</span>
+    <p>haha</p>
+  </div>
   <script>
-    function dep(name){
-      this
-      this.name = name
-    }
-
-    function defineReactive(i){
-      var a = new dep(i);
-      console.log(a)
-    }
-
-    
-    for(let i = 0; i < 10; i++){
-      defineReactive(i)
-    }
-
-    console.log(a)
+    let nodes = document.getElementById('app')
+    console.log(nodes)
   </script>
 </body>
 </html>
