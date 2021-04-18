@@ -128,3 +128,25 @@ SSR有着更好的SEO、并且首屏加载速度更快等优点。
 
 location.hash的值实际就是URL中#后面的东西。
 history实际采用了HTML5中提供的API来实现，主要有history.pushState()和history.replaceState()。
+
+
+### 15.vue的事件绑定
+
+- 原生事件通过 addEventListener 绑定给真实的元素
+- 组件事件绑定是通过Vue自定义的$on实现的。
+
+
+### 16.Vue2.x组件通信有哪些方式
+
+- props、$on/$emit(通过事件传值) => 父子
+- Bus：用一个空的VUE实例(全局要唯一) => 父子，兄弟，隔代
+- $parent / $children 与 refs => 父子
+  ref：如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例  
+  $parent / $children：访问父 / 子实例
+- vuex => 父子，兄弟，隔代
+- $attrs/$listeners => 父子，隔代
+  $attrs：父组件绑定的非props属性  
+  $listeners：父组件绑定的非原生事件
+- provide/inject：允许祖先组件先子组件注入依赖 => 父子,隔代
+  provide：父组件提供变量值  
+  inject：子组件提供变量名
