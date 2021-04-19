@@ -45,10 +45,13 @@
 |   4月12日  |          Promise         |                       |
 |   4月13日  |          Promise         |                       |
 |   4月14日  | 深入数组, ES6, Generator, await/async |           |
-|   4月15日  |   Vue, 浏览器, http、tcp  |                        |
-|   4月16日  |      浏览器, http、tcp    |                       |
-|   4月17日  | 前端优化, Waterfall瀑布流  |                       |
-|   4月18日  |    Webpack, Typescript    |                       |
+|   4月15日  |         Vue, 浏览器       |                       |
+|   4月16日  |            Vue            |                      |
+|   4月17日  |            Vue            |                      |
+|   4月18日  |          其他方面          |                      |
+|   4月19日  | 浏览器, http, SEO, 前端优化, 项目, 简历 |                |
+|   4月20日  |    Webpack, Typescript, 项目    |                 |
+
 
 
 ### 综合题
