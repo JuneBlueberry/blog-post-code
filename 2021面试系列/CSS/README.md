@@ -369,3 +369,22 @@ CSS后处理器是对CSS进行处理，并最终生成CSS的预处理器，它�
 
 - transition关注的是CSS property的变化，property值和时间的关系是一个三次贝塞尔曲线。
 - animation作用于元素本身而不是样式属性，可以使用关键帧的概念，应该说可以实现更自由的动画效果。
+
+
+### 42.Flex布局
+
+容器属性
+- flex-direction: 主轴方向
+- flex-wrap: 换行方式
+- flex-flow: flex-direction && flex-warp 简写
+- justidy-content: 主轴的对其方式
+- align-items:交叉轴对齐方式
+- align-content: 多轴对齐方式
+
+项目属性
+- order: 项目排列顺序
+- flex-grow: 项目放大比例，默认为0，空间剩余不放大
+- flex-shrink: 项目缩小比例，默认为1，空间不足则缩小
+- flex-basis: 项目分配剩余空间之前，所占据的主轴空间
+- flex: flex-grow && flex-shrink && flex-basis 缩写， 快捷值(auto, none)
+- align-self: 允许单个项目有其他的排列方式，可以覆盖align-items

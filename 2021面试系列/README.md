@@ -172,6 +172,17 @@
 - 晨曦【Vue 进阶必学之高阶组件 HOC】：https://juejin.im/post/5e8b5fa6f265da47ff7cc139
 
 
+### Webpack
+
+- 霖呆呆【webpack之路】：https://github.com/LinDaiDai/webpack-document
+- 刘小夕【webpack系列】：https://juejin.im/post/5e5c65fc6fb9a07cd00d8838
+- 童欧巴【webpack面试题】：https://juejin.im/post/5e6f4b4e6fb9a07cd443d4a5
+
+
+### V8引擎
+
+三元【V8引擎】：http://47.98.159.95/my_blog/js-v8/003.html
+
 ### DFS和BFS
 
 

@@ -150,3 +150,12 @@ history实际采用了HTML5中提供的API来实现，主要有history.pushState
 - provide/inject：允许祖先组件先子组件注入依赖 => 父子,隔代
   provide：父组件提供变量值  
   inject：子组件提供变量名
+
+
+
+### 17.this.$set()的原理
+
+- 由于对象和数组是引用类型，Vue在数据劫持的时候没有办法监听到新增的子属性
+- 同样给数据length也无法监控到
+- 而this.$set方法vue会绑定新增的属性
+- vue在数组的响应式上做了优化，数组的常规方法：push,pop,shift,unshift,sort,splice,reverse做了封装，他们会触发视图更新
