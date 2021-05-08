@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <script>
+    
+    document.getElementById('btn').addEventListener('click', throttle(() => {
+      //要处理的逻辑
+      console.log(111)
+    }, 1000))
+
+    function throttle(fn, time){
+      let timeout = true  //是否运行调用
+      return function(){
+        if(!timeout){
+          return
+        }
+        timeout = false
+        setTimeout(() => {
+          fn()
+          timeout = true
+        }, 1000)
+      }
+    }
+  </script>
+</body>
+</html>
