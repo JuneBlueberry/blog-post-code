@@ -2,6 +2,15 @@
 
 > 待归档题库
 
+- [ ] 1px问题
+- [ ] typeof和instanceof原理是什么
+- [ ] keep-alive怎么使用
+- [ ] proxy的实际应用场景
+- [ ] webpack如何解析less和sass
+- [ ] js原型和原型链的理解
+- [ ] es5如何实现继承
+- [ ] class的super是做什么用的
+
 > 已归档题库
 
 #### 代码题

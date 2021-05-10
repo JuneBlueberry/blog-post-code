@@ -1,0 +1,7 @@
+- keep-alive缓存组件,本身本质也是一个组件，可以配合vue-router使用
+- include(白名单), exclude(黑名单), max(缓存组件上限)
+- 这个组件有一个属性abstract:true，同时维护一个数组用来存放缓存组件的key
+- vue正常渲染render阶段开始的，但keep-alive的渲染是在patch阶段，这是构建组件树（虚拟DOM树），并将VNode转换成真正DOM节点的过程
+- 这也意味这，VNode里面不会有keep-alive组件，自然也不会渲染成真是的DOM节点
+- 只执行一次的钩子函数(缓存的组件不会进入$mount过程)：beforeCrate,Created,beforeMounted,mounted
+- 可重复使用的钩子函数:activated,deactivated
