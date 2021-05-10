@@ -23,7 +23,7 @@
         }
         timeout = false
         setTimeout(() => {
-          fn()
+          fn.apply(this, arguments)
           timeout = true
         }, 1000)
       }

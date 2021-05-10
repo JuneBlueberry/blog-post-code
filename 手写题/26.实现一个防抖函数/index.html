@@ -20,7 +20,9 @@
         if(timeout){
           clearTimeout(timeout)
         }
-        timeout = setTimeout(fn, time)
+        timeout = setTimeout(() => {
+          fn.apply(this, arguments)
+        }, time)
       }
     }
   </script>
